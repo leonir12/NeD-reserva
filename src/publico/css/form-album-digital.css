@@ -1,0 +1,49 @@
+main {
+    background-color: #F38957;
+}
+
+.jumbotron {
+    background-color: #F38957;
+    text-align: center;
+}
+
+body{
+    padding: auto;
+}
+
+#dados-pessoais-tab {
+    color:#DC2422;
+}
+
+#autorizacao-tab {
+    color:#DC2422;
+}
+
+
+#botaoProximo{
+    background-color: #3D1805;
+    color:#fff
+}
+
+#botaoEnviar {
+    background-color:#3D1805;
+    color: #fff;
+}
+
+
+.div-tab{
+    background-color: #F38957;
+    padding: 10px;
+}
+
+.div-botao{
+    padding-top: 10px;
+}
+
+.div-autorizacao{
+    padding-top: 10px;
+}
+
+textarea {
+    text-align: justify;
+}

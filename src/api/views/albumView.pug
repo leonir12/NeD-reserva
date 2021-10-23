@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        table(border='1px', cellpading='5px') 
+            thead 
+                tr
+                    th Nome
+                    th CPF
+                    th Telefone/Whats
+                    th Email
+                    th Estado
+                    th Cidade 
+                    th Data de nascimento  
+                    th Titulo da foto
+                    th Nome do(a) fotografo(a)
+                    th Foto 
+                    th Nome do responsavel
+                    th CPF do responsavel
+            tbody
+                each album in todosOsCadastros
+                    tr
+                        td #{album.nome}
+                        td #{album.cpf}
+                        td #{album.tel_whats}
+                        td #{album.email}
+                        td #{album.estado}
+                        td #{album.cidade}
+                        td #{album.data_nascimento}
+                        td #{album.titulo_foto}
+                        td #{album.nome_fotografa}
+                        td 
+                            img(src="uploads/"+album.nome_foto)
+                        td #{album.nome_responsavel}
+                        td #{album.cpf_responsavel}          

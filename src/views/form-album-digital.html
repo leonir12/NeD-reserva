@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/publico/css/form-album-digital.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/bscss/bootstrap.min.css">
+
+  <script src="/bsjs/bootstrap.min.js"></script>
+  <script src="/popperjs/popper.min.js"></script>
+  <script src="/jquery/jquery.min.js"></script>
+
+  <script src="/publico/js/validar.js"></script>
+
+  <title>Negritude em Debate</title>
+
+</head>
+
+<body>
+  <main>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Album Digital</h1>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button class="nav-link active" id="dados-pessoais-tab" data-bs-toggle="tab" data-bs-target="#dados-pessoais"
+          type="button" role="tab" aria-controls="dados-pessoais" aria-selected="true">Dados Pessoais</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="autorizacao-tab" data-bs-toggle="tab" data-bs-target="#autorizacao" type="button"
+          role="tab" aria-controls="autorizacao" aria-selected="false">Autorização</button>
+      </li>
+    </ul>
+
+    <form id="dataForm" name="dataForm" class="row g-3" action="/album-digital" method="POST"
+      onsubmit="return validarFormulario()">
+      <div class="tab-content">
+        <div class="tab-pane active div-tab" id="dados-pessoais" role="tabpanel" aria-labelledby="dados-pessoais-tab">
+          <div class="col-md-12">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome aqui">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="cpf" class="form-label">CPF</label>
+              <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Ex: 12345678901">
+            </div>
+            <div class="col-md-6">
+              <label for="telWhats" class="form-label">Telefone / Whatsapp</label>
+              <input type="number" class="form-control" id="telWhats" name="telWhats" placeholder="Ex:67999999999">
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Ex: example@gmail.com">
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <label for="estado" class="form-label">Estado</label>
+              <select id="estado" name="estado" class="form-select" aria-label="readonly">
+                <option selected>MS</option>
+              </select>
+            </div>
+            <div class="col-md-10">
+              <label for="cidade" class="form-label">Cidade</label>
+              <select id="cidade" name="cidade" class="form-select">
+                <option selected>Campo Grande</option>
+                <option selected>Aquidauana</option>
+                <option selected>Três Lagoas</option>
+                <option selected>Jardim</option>
+                <option selected>Nova Andradina</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="dataNascimento" class="form-label">Data Nascimento</label>
+            <input type="date" class="form-control" id="dataNascimento" name="dataNascimento">
+          </div>
+
+          <div class="row">
+            <div class="col-md-6" id="div-nome-responsavel">
+              <label for="nomeReponsavel" class="form-label">Nome do Responsável</label>
+              <input type="text" class="form-control" id="nomeResponsavel" name="nomeResponsavel">
+            </div>
+            <div class="col-md-6" id="div-cpf-responsavel">
+              <label for="cpfResponsavel" class="form-label">CPF Responsável</label>
+              <input type="number" class="form-control" id="cpfResponsavel" name="cpfResponsavel">
+            </div>
+          </div>
+
+
+          <div class="container d-flex justify-content-around div-botao">
+            <button id="botaoProximo" type="button" class="btn">Próximo</button>
+          </div>
+
+        </div>
+
+        <div class="tab-pane div-tab" id="autorizacao" role="tabpanel" aria-labelledby="autorizacao-tab">
+          <div class="col-md-12">
+            <label for="objetivos" class="form-label">Objetivos</label>
+            <textarea readonly type="text" class="form-control"
+              id="objetivos">O projeto tem como objetivo visibilizar a beleza a cultura e a ancestralidade negra existentes no Mato Grosso do Sul, historicamente apagados e fora dos padrões estéticos eurocêntricos.
+Oportunizará assim, as discussões étnico-raciais capazes de qualificar e encorajar as professoras e professores a trabalharem com a problemática da população negra, em sala de aula, na tentativa de diminuir o arranjo da desigualdade existente no país.
+Para isso, a partir das fotografias selecionadas para a mostra fotográfica, irá se elaborar um álbum de fotografias que ao ser finalizado, será direcionado para escolas públicas, com a intenção de contribuir com o debate da Lei 10.639/03 que determina o ensino de História e Cultura Afro-brasileira nas escolas.</textarea>
+          </div>
+          <div class="col-md-12">
+            <label for="regras" class="form-label">Regras</label>
+            <textarea readonly type="text" class="form-control" id="regras">
+&#128420; Cada pessoa poderá participar com uma fotografia
+&#128420; A fotografia deve ser no formato digital JPG/JPEG
+&#128420; A fotografia poderá ser colorida ou preta e branco
+&#128420; A técnica para criação é livre mas precisa seguir o tema Beleza Negra Resiste
+&#128420; Cada pessoa só poderá ser premiada uma única vez
+&#128420; As fotografias serão selecionadas por um júri composto de pessoas pretas, que julgará a beleza negra a partir dos elementos que permitirão evidenciar as conexões com as raízes negras, com a ancestralidade negra, com a diáspora negra, com as pequenas Áfricas que existem em cada pessoa negra que vive em Mato Grosso do Sul
+&#128420; Toda fotografia deve ser encaminhada com a autorização de uso de imagem. A UFMS e o IFMS reservam para si, desde já, o direito incontestável de reproduzir as fotografias inscritas em seu material institucional a qualquer momento e por tempo indeterminado, dando os devidos créditos ao fotógrafo.
+            </textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="tituloFoto" class="form-label">Título da Foto</label>
+              <input type="text" class="form-control" id="tituloFoto" name="tituloFoto">
+            </div>
+            <div class="col-md-6">
+              <label for="nomeFotografa" class="form-label">Nome da/o Fotógrafa/o</label>
+              <input type="text" class="form-control" id="nomeFotografa" name="nomeFotografa">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="nomeFoto" class="form-label">Foto</label>
+            <input class="form-control" type="file" id="nomeFoto" name="nomeFoto">
+          </div>
+
+          <div class="row div-autorizacao">
+            <div class="col-md-3">
+              <label for="autorizacao" class="form-label">Li o termo e autorizo o uso de minha imagem</label>
+            </div>
+            <div class="col-md-1">
+              <input class="form-check-input" type="checkbox" id="autorizacao">
+            </div>
+            <div class="col-md-8">
+              <textarea readonly type="text" class="form-control" id="objetivos" style="height: 100px">
+Autorizo a Universidade Federal do Mato Grosso do Sul e o Instituto Federal do Mato Grosso do Sul, bem como a/o fotógrafa/o a utilizarem a minha imagem para fins de participação na mostra fotográfica "Beleza Negra Resiste". Poderão utilizá-la na divulgação de materiais impressos, audiovisuais e eletrônicos, sem fins lucrativos e também poderá ser utilizada por tempo indeterminado. Fica assim autorizada, de livre e espontânea vontade, para os mesmos fins a cessão de direitos de veiculação, não recebendo para tanto qualquer tipo de remuneração. 
+&#013;
+Por meio desta autorização, eu libero a UFMS e o IFMS, acima citados, seus representantes legais ou fornecedores, de futuros processos e queixas por violação de privacidade ou de direito de propriedade que eu poderia ter em relação a tal produção.  
+&#013;
+Ao marcar o aceite da leitura do termo e autorização da imagem, concordo com as regras e autorização dispostas nesta página.
+                </textarea>
+            </div>
+          </div>
+          <div class="container d-flex justify-content-around div-botao">
+            <button id="botaoEnviar" type="submit" class="btn botao">Enviar</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+    </div>
+
+  </main>
+
+  <form id="fileForm" action="/uploadFoto" method="post" encType="multipart/form-data" style="visibility: hidden;">
+    <input type='submit' />
+  </form>
+
+</body>
+
+</html>
